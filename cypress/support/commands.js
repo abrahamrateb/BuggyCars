@@ -35,3 +35,14 @@ Cypress.Commands.add('InvalidRegistration', (password, passwordError) => {
     .get('#password').type(password).get('#confirmPassword').type(password).get('.btn-default').click()
     .get('.result').contains(passwordError)
 })
+
+Cypress.Commands.add('FillOutRegistration', (username, password) => {
+    cy.get('#username').type(`${username}${hh}${dd}${mm}`).get('#firstName').type(`Some${hh}`).get('#lastName').type(`Guy${min}`)
+    .get('#password').type(password).get('#confirmPassword').type(password)
+})
+
+Cypress.Commands.add('ClickRegister', (username, password) => {
+    cy.get('.btn-default').click()
+})
+
+

@@ -27,10 +27,8 @@ context('Invalid Password Flows', () => {
       })
 
       it('Register User With mistMatched Passwords', () => {
-
         cy.get('#username').type('Login').get('#firstName').type('Some').get('#lastName').type('Guy')
         .get('#password').type(numericPassword).get('#confirmPassword').type('1234').get(':nth-child(5) > .alert').contains(misMatchedPassword)
-
       })
     })
 
