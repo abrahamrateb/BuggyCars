@@ -1,0 +1,27 @@
+{
+  "name": "ui_tests_buggycars",
+  "version": "1.0.0",
+  "description": "UI Tests for BuggyCars",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abrahamrateb/BuggyCars.git"
+  },
+  "keywords": [
+    "UI",
+    "cypress",
+    "BuggyCars"
+  ],
+  "author": "Abraham Rateb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abrahamrateb/BuggyCars/issues"
+  },
+  "homepage": "https://github.com/abrahamrateb/BuggyCars#readme",
+  "devDependencies": {
+    "cypress": "^7.5.0"
+  }
+}

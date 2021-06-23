@@ -1,0 +1,9 @@
+{
+    "baseUrl": "https://buggy.justtestit.org",
+    "env": {
+        "username": "Abraham",
+        "password": "Test!234",
+        "login_url": "/login",
+        "products_url": "/products"
+      }
+}
