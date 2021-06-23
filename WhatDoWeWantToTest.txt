@@ -1,0 +1,28 @@
+What do we want to test? What can this do? 
+
+FLOWS/JOURNEYS - Let's cover this in the UI
+Registration
+Login
+Update Profile
+Vote
+Comment
+
+PAGES - We can check/cover this stuff also in the UI
+Popular Make
+	Model
+	View More
+Popular Model
+Overall Rating
+	Order
+Social Media Links
+
+APIs - These seem to be the endpoints we'll be hitting, some of the are open/unauthenticated, and some of them can only be called if Authenticated
+This means we need to get the bearer token, which for the case of this demo test, it a simple Password grant type flow
+/prod/makes/ - GET
+/prod/models/ - GET
+/prod/models/{}/vote - POST - Authenticated
+/prod/oauth/token - POST - Password flow
+/prod/users/current - GET - Authenticated
+/prod/users/profile - GET and PUT - Authenticated
+
+
