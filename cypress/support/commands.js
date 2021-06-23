@@ -53,4 +53,11 @@ Cypress.Commands.add('ClickLogin', () => {
     cy.get('.btn-success').click()
 })
 
+Cypress.Commands.add('UpdatePhoneNo', () => {
+    cy.get('#phone').clear().type(`021${hh}${min}${dd}${mm}`)
+})
+
+Cypress.Commands.add('VerifyUpdate', () => {
+    cy.get(':nth-child(1) > .result').contains('The profile has been saved successful')
+})
 
