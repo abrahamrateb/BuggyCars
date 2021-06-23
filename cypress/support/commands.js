@@ -45,4 +45,12 @@ Cypress.Commands.add('ClickRegister', (username, password) => {
     cy.get('.btn-default').click()
 })
 
+Cypress.Commands.add('Login', (username, password) => {
+    cy.get('.input-sm').type(username).get('[name="password"]').type(password)
+})
+
+Cypress.Commands.add('ClickLogin', () => {
+    cy.get('.btn-success').click()
+})
+
 

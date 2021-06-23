@@ -7,8 +7,8 @@ context('Invalid Password Flows', () => {
     })
 
     it('Login User Successfully', () => {
-        cy.get('.input-sm').type(Cypress.env('loginusername')).get('[name="password"]').type(Cypress.env('password'))
-        cy.get('.btn-success').click()
+        cy.Login(Cypress.env('loginusername'), Cypress.env('password'))
+        cy.ClickLogin()
         cy.get(':nth-child(1) > .nav-link').contains(Cypress.env('customerFirstName'))
         .get(':nth-child(3) > .nav-link').contains('Logout')
       })
