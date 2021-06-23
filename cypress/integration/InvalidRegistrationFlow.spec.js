@@ -6,11 +6,6 @@ context('Invalid Password Flows', () => {
       cy.viewport(1400, 1000)
     })
   
-    var today = new Date();
-    var hh = String(today.getHours())
-    var min = String(today.getMinutes())
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); 
     var shortPassword = 'Test!2'
     var shortPasswordError = 'InvalidPasswordException: Password did not conform with policy: Password not long enough'
     var nonNumericPassword = 'TestTest'
@@ -20,34 +15,20 @@ context('Invalid Password Flows', () => {
     var misMatchedPassword = 'Passwords do not match'
 
     it('Register User With Invalid Password Length', () => {
-
-        cy.log(hh + min + dd + mm)
-
-        cy.get('#username').type(hh + min + dd + mm).get('#firstName').type('Some' + hh).get('#lastName').type('Guy' + min)
-        .get('#password').type(shortPassword).get('#confirmPassword').type(shortPassword).get('.btn-default').click()
-        .get('.result').contains(shortPasswordError)
-
+        cy.InvalidRegistration(shortPassword, shortPasswordError)
       })
 
     it('Register User With Alphabetic Only Password', () => {
-
-        cy.get('#username').type(hh + min + dd + mm).get('#firstName').type('Some' + hh).get('#lastName').type('Guy' + min)
-        .get('#password').type(nonNumericPassword).get('#confirmPassword').type(nonNumericPassword).get('.btn-default').click()
-        .get('.result').contains(nonNumericPasswordError)
-
+        cy.InvalidRegistration(nonNumericPassword, nonNumericPasswordError)
       })
 
       it('Register User With Numeric Only Password', () => {
-
-        cy.get('#username').type(hh + min + dd + mm).get('#firstName').type('Some' + hh).get('#lastName').type('Guy' + min)
-        .get('#password').type(numericPassword).get('#confirmPassword').type(numericPassword).get('.btn-default').click()
-        .get('.result').contains(numericPasswordError)
-
+        cy.InvalidRegistration(numericPassword, numericPasswordError)
       })
 
       it('Register User With mistMatched Passwords', () => {
 
-        cy.get('#username').type(hh + min + dd + mm).get('#firstName').type('Some' + hh).get('#lastName').type('Guy' + min)
+        cy.get('#username').type('Login').get('#firstName').type('Some').get('#lastName').type('Guy')
         .get('#password').type(numericPassword).get('#confirmPassword').type('1234').get(':nth-child(5) > .alert').contains(misMatchedPassword)
 
       })

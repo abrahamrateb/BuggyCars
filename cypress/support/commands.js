@@ -23,3 +23,15 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+var today = new Date();
+var hh = String(today.getHours())
+var min = String(today.getMinutes())
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0');
+
+Cypress.Commands.add('InvalidRegistration', (password, passwordError) => {
+    cy.get('#username').type(hh + min + dd + mm).get('#firstName').type('Some' + hh).get('#lastName').type('Guy' + min)
+    .get('#password').type(password).get('#confirmPassword').type(password).get('.btn-default').click()
+    .get('.result').contains(passwordError)
+})
