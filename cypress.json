@@ -1,9 +1,10 @@
 {
     "baseUrl": "https://buggy.justtestit.org",
+    "defaultCommandTimeout": 6000,
     "env": {
         "username": "Abraham",
         "password": "Test!234",
-        "loginusername": "AbrahamDemo",
+        "loginusername": "AbrahamDemo1",
         "customerFirstName": "Some",
         "login_url": "/login",
         "products_url": "/products"

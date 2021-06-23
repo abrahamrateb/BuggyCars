@@ -37,7 +37,7 @@ Cypress.Commands.add('InvalidRegistration', (password, passwordError) => {
 })
 
 Cypress.Commands.add('FillOutRegistration', (username, password) => {
-    cy.get('#username').type(`${username}${hh}${dd}${mm}`).get('#firstName').type(`Some${hh}`).get('#lastName').type(`Guy${min}`)
+    cy.get('#username').type(`${username}${hh}${min}${dd}${mm}`).get('#firstName').type(`Some${hh}`).get('#lastName').type(`Guy${min}`)
     .get('#password').type(password).get('#confirmPassword').type(password)
 })
 
