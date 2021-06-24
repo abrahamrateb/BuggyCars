@@ -51,7 +51,7 @@ You will in short need:
  * Run `npm install` (from the folder that contains your package-lock.json)
  * Cypress Installed
 
-If all the above are installed, then you must be in the root folder (where your cypress.json) file is. 
+If all the above are installed, then open up your command prompt and navigate to the root folder (where your cypress.json) file is. 
 
 And you can run the tests using `cypress run` or `npm test`
 OR if you wanna watch the tests you can use `cypress run --headed`
