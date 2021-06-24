@@ -23,15 +23,6 @@ context('Invalid Password Flows', () => {
         cy.url().should('include', 'overall')
       })
 
-      //Only true if a user hasn't voted yet
-      it('Navigate to Popular Models Page and Logging in enables the Vote/Comment Button', () => {
-        cy.get(':nth-child(2) > .card').click()
-        cy.url().should('include', 'model')
-        cy.Login(Cypress.env('loginusername'), Cypress.env('password'))
-        cy.ClickLogin()
-        cy.get('#comment').should('be.enabled').get('.btn').should('be.enabled')
-        cy.get(':nth-child(3) > .nav-link').click()
-      })
 
     })
 
