@@ -1,7 +1,6 @@
 ﻿@Models
 Feature: Models
 
-
 Scenario: Search for Zonda models
 	Given I look for the "Zonda" model
 	When I search for model
@@ -13,3 +12,7 @@ Scenario: Can Search for different models
 	Given I look for the "Diablo" model
 	When I search for model
 	Then the model make should be "Lamborghini"
+
+#TODO
+#1. Cover the /Make Endpoint
+#2. Use Authenticated User to call the /Vote endpoint
