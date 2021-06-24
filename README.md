@@ -53,7 +53,7 @@ You will in short need:
 
 1. If all the above are installed, then open up your command prompt and navigate to the root folder (where your cypress.json) file is. 
 2. And you can run the tests using `cypress run` or `npm test`
-OR if you wanna watch the tests you can use `cypress run --headed`
+OR if you wanna watch the tests you can use `cypress run --headed` *If cypress run is unrecognized try running npx cypress run instead*
 3. The output of the test (if run locally) will be in the cypress > videos folder on your local machine. 
 In the pipeline you must connect the reporting to a tool like ReportPortal or Cypress Dashboard.
 
